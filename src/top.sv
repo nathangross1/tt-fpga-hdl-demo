@@ -4,7 +4,7 @@
 //_\SV
    // Include Tiny Tapeout Lab.
    // Included URL: "https://raw.githubusercontent.com/os-fpga/Virtual-FPGA-Lab/35e36bd144fddd75495d4cbc01c4fc50ac5bde6f/tlv_lib/tiny_tapeout_lib.tlv"// Included URL: "https://raw.githubusercontent.com/os-fpga/Virtual-FPGA-Lab/a069f1e4e19adc829b53237b3e0b5d6763dc3194/tlv_lib/fpga_includes.tlv"
-//_\source top.tlv 155
+//_\source top.tlv 170
 
 //_\SV
 
@@ -154,9 +154,6 @@ logic [7:0] L0_sseg_digit_n_a0;
 // For $sseg_segment_n.
 logic [6:0] L0_sseg_segment_n_a0;
 
-// For /fpga_pins/fpga|project$button.
-logic [3:0] FpgaPins_Fpga_PROJECT_button_a0;
-
 // For /fpga_pins/fpga|project$button_num.
 logic [6:0] FpgaPins_Fpga_PROJECT_button_num_a0,
             FpgaPins_Fpga_PROJECT_button_num_a1;
@@ -177,8 +174,20 @@ logic [3:0] FpgaPins_Fpga_PROJECT_button_tens_a0;
 // For /fpga_pins/fpga|project$button_tens_temp.
 logic [6:0] FpgaPins_Fpga_PROJECT_button_tens_temp_a0;
 
+// For /fpga_pins/fpga|project$die_ones.
+logic [3:0] FpgaPins_Fpga_PROJECT_die_ones_a0;
+
+// For /fpga_pins/fpga|project$die_ones_temp.
+logic [6:0] FpgaPins_Fpga_PROJECT_die_ones_temp_a0;
+
 // For /fpga_pins/fpga|project$die_size.
 logic [6:0] FpgaPins_Fpga_PROJECT_die_size_a0;
+
+// For /fpga_pins/fpga|project$die_tens.
+logic [3:0] FpgaPins_Fpga_PROJECT_die_tens_a0;
+
+// For /fpga_pins/fpga|project$die_tens_temp.
+logic [6:0] FpgaPins_Fpga_PROJECT_die_tens_temp_a0;
 
 // For /fpga_pins/fpga|project$eight.
 logic [6:0] FpgaPins_Fpga_PROJECT_eight_a0;
@@ -197,6 +206,9 @@ logic [6:0] FpgaPins_Fpga_PROJECT_nine_a0;
 
 // For /fpga_pins/fpga|project$one.
 logic [6:0] FpgaPins_Fpga_PROJECT_one_a0;
+
+// For /fpga_pins/fpga|project$out.
+logic [6:0] FpgaPins_Fpga_PROJECT_out_a0;
 
 // For /fpga_pins/fpga|project$output.
 logic [6:0] FpgaPins_Fpga_PROJECT_output_a0;
@@ -310,8 +322,6 @@ logic [6:0] FpgaPins_Fpga_PROJECT_zero_a0;
             // Scope: |project
             //
             if (1) begin : P_project
-               (* keep *) logic [3:0] \///@0$button ;
-               assign \///@0$button = FpgaPins_Fpga_PROJECT_button_a0;
                (* keep *) logic [6:0] \///@0$button_num ;
                assign \///@0$button_num = FpgaPins_Fpga_PROJECT_button_num_a0;
                (* keep *) logic [3:0] \///@0$button_ones ;
@@ -324,8 +334,16 @@ logic [6:0] FpgaPins_Fpga_PROJECT_zero_a0;
                assign \///@0$button_tens = FpgaPins_Fpga_PROJECT_button_tens_a0;
                (* keep *) logic [6:0] \///@0$button_tens_temp ;
                assign \///@0$button_tens_temp = FpgaPins_Fpga_PROJECT_button_tens_temp_a0;
+               (* keep *) logic [3:0] \///@0$die_ones ;
+               assign \///@0$die_ones = FpgaPins_Fpga_PROJECT_die_ones_a0;
+               (* keep *) logic [6:0] \///@0$die_ones_temp ;
+               assign \///@0$die_ones_temp = FpgaPins_Fpga_PROJECT_die_ones_temp_a0;
                (* keep *) logic [6:0] \///@0$die_size ;
                assign \///@0$die_size = FpgaPins_Fpga_PROJECT_die_size_a0;
+               (* keep *) logic [3:0] \///@0$die_tens ;
+               assign \///@0$die_tens = FpgaPins_Fpga_PROJECT_die_tens_a0;
+               (* keep *) logic [6:0] \///@0$die_tens_temp ;
+               assign \///@0$die_tens_temp = FpgaPins_Fpga_PROJECT_die_tens_temp_a0;
                (* keep *) logic [6:0] \///@0$eight ;
                assign \///@0$eight = FpgaPins_Fpga_PROJECT_eight_a0;
                (* keep *) logic [6:0] \///@0$err ;
@@ -338,6 +356,8 @@ logic [6:0] FpgaPins_Fpga_PROJECT_zero_a0;
                assign \///@0$nine = FpgaPins_Fpga_PROJECT_nine_a0;
                (* keep *) logic [6:0] \///@0$one ;
                assign \///@0$one = FpgaPins_Fpga_PROJECT_one_a0;
+               (* keep *) logic [6:0] \///@0$out ;
+               assign \///@0$out = FpgaPins_Fpga_PROJECT_out_a0;
                (* keep *) logic [6:0] \///@0$output ;
                assign \///@0$output = FpgaPins_Fpga_PROJECT_output_a0;
                (* keep *) logic [7:0] \///@0$output_switch ;
@@ -375,7 +395,7 @@ logic [6:0] FpgaPins_Fpga_PROJECT_zero_a0;
 //_\TLV
    /* verilator lint_off UNOPTFLAT */
    // Connect Tiny Tapeout I/Os to Virtual FPGA Lab.
-   //_\source /raw.githubusercontent.com/osfpga/VirtualFPGALab/35e36bd144fddd75495d4cbc01c4fc50ac5bde6f/tlvlib/tinytapeoutlib.tlv 76   // Instantiated from top.tlv, 224 as: m5+tt_connections()
+   //_\source /raw.githubusercontent.com/osfpga/VirtualFPGALab/35e36bd144fddd75495d4cbc01c4fc50ac5bde6f/tlvlib/tinytapeoutlib.tlv 76   // Instantiated from top.tlv, 239 as: m5+tt_connections()
       assign L0_slideswitch_a0[7:0] = ui_in;
       assign L0_sseg_segment_n_a0[6:0] = ~ uo_out[6:0];
       assign L0_sseg_decimal_point_n_a0 = ~ uo_out[7];
@@ -383,7 +403,7 @@ logic [6:0] FpgaPins_Fpga_PROJECT_zero_a0;
    //_\end_source
 
    // Instantiate the Virtual FPGA Lab.
-   //_\source /raw.githubusercontent.com/osfpga/VirtualFPGALab/a069f1e4e19adc829b53237b3e0b5d6763dc3194/tlvlib/fpgaincludes.tlv 307   // Instantiated from top.tlv, 227 as: m5+board(/top, /fpga, 7, $, , my_design)
+   //_\source /raw.githubusercontent.com/osfpga/VirtualFPGALab/a069f1e4e19adc829b53237b3e0b5d6763dc3194/tlvlib/fpgaincludes.tlv 307   // Instantiated from top.tlv, 242 as: m5+board(/top, /fpga, 7, $, , my_design)
       
       //_\source /raw.githubusercontent.com/osfpga/VirtualFPGALab/a069f1e4e19adc829b53237b3e0b5d6763dc3194/tlvlib/fpgaincludes.tlv 355   // Instantiated from /raw.githubusercontent.com/osfpga/VirtualFPGALab/a069f1e4e19adc829b53237b3e0b5d6763dc3194/tlvlib/fpgaincludes.tlv, 309 as: m4+thanks(m5__l(309)m5_eval(m5_get(BOARD_THANKS_ARGS)))
          //_/thanks
@@ -402,6 +422,9 @@ logic [6:0] FpgaPins_Fpga_PROJECT_zero_a0;
             
                //_|project
                   //_@0
+                     //TODO: Display die size before rolling / get rid of tens if single digit
+            
+                     //TODO: Animation
                      assign FpgaPins_Fpga_PROJECT_reset_a0 = reset;
             
                      //Constants
@@ -423,14 +446,21 @@ logic [6:0] FpgaPins_Fpga_PROJECT_zero_a0;
                      //Button press at input 7
                      assign FpgaPins_Fpga_PROJECT_button_press_a0 = ui_in[7];
             
-                     // From 1 to die size, count unless button press, reset to 0 if at die size
+                     // From 1 to die size, count. reset to 1 if at die size
                      assign FpgaPins_Fpga_PROJECT_rand_num_a0[6:0] =
                         FpgaPins_Fpga_PROJECT_reset_a1 ?
-                           7'b0 :
+                           7'b0000001 :
                         FpgaPins_Fpga_PROJECT_rand_num_a1 >= FpgaPins_Fpga_PROJECT_die_size_a0 ?
-                           7'b0 :
+                           7'b0000001 :
                         //else
                            FpgaPins_Fpga_PROJECT_rand_num_a1 + 1;
+            
+                     //Get ones and tens values for die size for display
+                     assign FpgaPins_Fpga_PROJECT_die_ones_temp_a0[6:0] = FpgaPins_Fpga_PROJECT_die_size_a0 % 10;
+                     assign FpgaPins_Fpga_PROJECT_die_tens_temp_a0[6:0] = FpgaPins_Fpga_PROJECT_die_size_a0 / 10;
+                     assign FpgaPins_Fpga_PROJECT_die_ones_a0[3:0] = FpgaPins_Fpga_PROJECT_die_ones_temp_a0[3:0];
+                     assign FpgaPins_Fpga_PROJECT_die_tens_a0[3:0] = FpgaPins_Fpga_PROJECT_die_tens_temp_a0[3:0];
+            
             
                      //After button press
                      //find trailing edge of button press
@@ -442,13 +472,13 @@ logic [6:0] FpgaPins_Fpga_PROJECT_zero_a0;
                         //else
                            FpgaPins_Fpga_PROJECT_button_num_a1;
             
-                     //Define outputs to display
+                     //Get ones and tens values after button press
                      assign FpgaPins_Fpga_PROJECT_button_ones_temp_a0[6:0] = FpgaPins_Fpga_PROJECT_button_num_a0 % 10;
                      assign FpgaPins_Fpga_PROJECT_button_tens_temp_a0[6:0] = FpgaPins_Fpga_PROJECT_button_num_a0 / 10;
-            
                      assign FpgaPins_Fpga_PROJECT_button_ones_a0[3:0] = FpgaPins_Fpga_PROJECT_button_ones_temp_a0[3:0];
                      assign FpgaPins_Fpga_PROJECT_button_tens_a0[3:0] = FpgaPins_Fpga_PROJECT_button_tens_temp_a0[3:0];
             
+                     //Switch outputs every 128 cycles
                      assign FpgaPins_Fpga_PROJECT_output_switch_a0[7:0] =
                         FpgaPins_Fpga_PROJECT_reset_a1 ?
                            8'b0 :
@@ -456,43 +486,48 @@ logic [6:0] FpgaPins_Fpga_PROJECT_zero_a0;
                            8'b0 :
                         //else
                            FpgaPins_Fpga_PROJECT_output_switch_a1 + 1;
-                     assign FpgaPins_Fpga_PROJECT_button_a0[3:0] =
-                        FpgaPins_Fpga_PROJECT_button_tens_a0 == 0 ?
-                           FpgaPins_Fpga_PROJECT_button_ones_a0 :
-                        FpgaPins_Fpga_PROJECT_output_switch_a0[7] == 0 ?
-                           FpgaPins_Fpga_PROJECT_button_ones_a0 :
-                           //else
-                           FpgaPins_Fpga_PROJECT_button_tens_a0;
             
+            
+                     //Output selector
+                     // If button not pressed, display die size
+                     // When pressed, display result, excluding tens if one digit
+                     assign FpgaPins_Fpga_PROJECT_out_a0[6:0] =
+                        ((FpgaPins_Fpga_PROJECT_button_press_a0 == 0) && (FpgaPins_Fpga_PROJECT_output_switch_a0[7] == 0)) ?
+                           FpgaPins_Fpga_PROJECT_die_ones_a0 :
+                        ((FpgaPins_Fpga_PROJECT_button_press_a0 == 0) && (FpgaPins_Fpga_PROJECT_output_switch_a0[7] == 1)) ?
+                           FpgaPins_Fpga_PROJECT_die_tens_a0 :
+                        ((FpgaPins_Fpga_PROJECT_button_press_a0 == 0) && (FpgaPins_Fpga_PROJECT_output_switch_a0[7] == 0)) ?
+                           FpgaPins_Fpga_PROJECT_button_ones_a0 :
+                        //else
+                        FpgaPins_Fpga_PROJECT_button_tens_a0;
+            
+                     //Format output to 7 segment
                      assign FpgaPins_Fpga_PROJECT_output_a0[6:0] =
-                        FpgaPins_Fpga_PROJECT_button_a0 == 4'b0000 ?
+                        FpgaPins_Fpga_PROJECT_out_a0 == 4'b0000 ?
                            FpgaPins_Fpga_PROJECT_zero_a0 :
-                        FpgaPins_Fpga_PROJECT_button_a0 == 4'b0001 ?
+                        FpgaPins_Fpga_PROJECT_out_a0 == 4'b0001 ?
                            FpgaPins_Fpga_PROJECT_one_a0 :
-                        FpgaPins_Fpga_PROJECT_button_a0 == 4'b0010 ?
+                        FpgaPins_Fpga_PROJECT_out_a0 == 4'b0010 ?
                            FpgaPins_Fpga_PROJECT_two_a0 :
-                        FpgaPins_Fpga_PROJECT_button_a0 == 4'b0011 ?
+                        FpgaPins_Fpga_PROJECT_out_a0 == 4'b0011 ?
                            FpgaPins_Fpga_PROJECT_three_a0 :
-                        FpgaPins_Fpga_PROJECT_button_a0 == 4'b0100 ?
+                        FpgaPins_Fpga_PROJECT_out_a0 == 4'b0100 ?
                            FpgaPins_Fpga_PROJECT_four_a0 :
-                        FpgaPins_Fpga_PROJECT_button_a0 == 4'b0101 ?
+                        FpgaPins_Fpga_PROJECT_out_a0 == 4'b0101 ?
                            FpgaPins_Fpga_PROJECT_five_a0 :
-                        FpgaPins_Fpga_PROJECT_button_a0 == 4'b0110 ?
+                        FpgaPins_Fpga_PROJECT_out_a0 == 4'b0110 ?
                            FpgaPins_Fpga_PROJECT_six_a0 :
-                        FpgaPins_Fpga_PROJECT_button_a0 == 4'b0111 ?
+                        FpgaPins_Fpga_PROJECT_out_a0 == 4'b0111 ?
                            FpgaPins_Fpga_PROJECT_seven_a0 :
-                        FpgaPins_Fpga_PROJECT_button_a0 == 4'b1000 ?
+                        FpgaPins_Fpga_PROJECT_out_a0 == 4'b1000 ?
                            FpgaPins_Fpga_PROJECT_eight_a0 :
-                        FpgaPins_Fpga_PROJECT_button_a0 == 4'b1001 ?
+                        FpgaPins_Fpga_PROJECT_out_a0 == 4'b1001 ?
                            FpgaPins_Fpga_PROJECT_nine_a0 :
                         //default
                            FpgaPins_Fpga_PROJECT_err_a0;
             
+                     //Concatenate output for display
                      assign uo_out =
-                        ((FpgaPins_Fpga_PROJECT_button_press_a0 == 0) && (FpgaPins_Fpga_PROJECT_output_switch_a0[7] == 0)) ?
-                           8'b00000010 :
-                        ((FpgaPins_Fpga_PROJECT_button_press_a0 == 0) && (FpgaPins_Fpga_PROJECT_output_switch_a0[7] == 1)) ?
-                           8'b00000010 :
                         FpgaPins_Fpga_PROJECT_output_switch_a0[7] == 0 ?
                            {1'b0, FpgaPins_Fpga_PROJECT_output_a0} :
                         //else
@@ -542,7 +577,7 @@ logic [6:0] FpgaPins_Fpga_PROJECT_zero_a0;
       
    //_\end_source
    // Label the switch inputs [0..7] (1..8 on the physical switch panel) (top-to-bottom).
-   //_\source /raw.githubusercontent.com/osfpga/VirtualFPGALab/35e36bd144fddd75495d4cbc01c4fc50ac5bde6f/tlvlib/tinytapeoutlib.tlv 82   // Instantiated from top.tlv, 229 as: m5+tt_input_labels_viz(⌈"UNUSED", "UNUSED", "UNUSED", "UNUSED", "UNUSED", "UNUSED", "UNUSED", "UNUSED"⌉)
+   //_\source /raw.githubusercontent.com/osfpga/VirtualFPGALab/35e36bd144fddd75495d4cbc01c4fc50ac5bde6f/tlvlib/tinytapeoutlib.tlv 82   // Instantiated from top.tlv, 244 as: m5+tt_input_labels_viz(⌈"UNUSED", "UNUSED", "UNUSED", "UNUSED", "UNUSED", "UNUSED", "UNUSED", "UNUSED"⌉)
       for (input_label = 0; input_label <= 7; input_label++) begin : L1_InputLabel //_/input_label
          
       end
