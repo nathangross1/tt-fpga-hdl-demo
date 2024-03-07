@@ -472,7 +472,7 @@ logic [6:0] FpgaPins_Fpga_PROJECT_zero_a0;
                //_|project
                   //_@0
                      //TODO: get rid of tens if single digit
-                     //TODO: Animation
+            
                      //TODO: err if 0
                      //TODO: fix counter recycling issue
                      //TODO: same clock on ASIC?
@@ -560,58 +560,58 @@ logic [6:0] FpgaPins_Fpga_PROJECT_zero_a0;
                      assign FpgaPins_Fpga_PROJECT_button_ones_temp_a0[6:0] = FpgaPins_Fpga_PROJECT_button_num_a0 % 10;
                      assign FpgaPins_Fpga_PROJECT_button_tens_temp_a0[6:0] = FpgaPins_Fpga_PROJECT_button_num_a0 / 10;
                      assign FpgaPins_Fpga_PROJECT_button_ones_a0[4:0] =
-                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd5000000 ?
+                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd2000000 ?
                            5'b01100 :
-                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd10000000 ?
+                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd4000000 ?
                            5'b01101 :
-                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd15000000 ?
+                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd6000000 ?
+                           5'b01110 :
+                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd8000000 ?
+                           5'b01111 :
+                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd10000000 ?
+                           5'b10000 :
+                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd12000000 ?
+                           5'b10001 :
+                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd14000000 ?
+                           5'b01100 :
+                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd16000000 ?
+                           5'b01101 :
+                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd18000000 ?
                            5'b01110 :
                         FpgaPins_Fpga_PROJECT_counter_a0 < 32'd20000000 ?
                            5'b01111 :
-                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd25000000 ?
+                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd22000000 ?
                            5'b10000 :
-                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd30000000 ?
-                           5'b10001 :
-                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd35000000 ?
-                           5'b01100 :
-                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd40000000 ?
-                           5'b01101 :
-                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd45000000 ?
-                           5'b01110 :
-                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd50000000 ?
-                           5'b01111 :
-                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd55000000 ?
-                           5'b10000 :
-                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd60000000 ?
+                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd24000000 ?
                            5'b10001 :
                         FpgaPins_Fpga_PROJECT_die_size_a0 > 7'd99 ?
                            5'b01011 :
                         //else
                         FpgaPins_Fpga_PROJECT_button_ones_temp_a0[4:0];
                      assign FpgaPins_Fpga_PROJECT_button_tens_a0[4:0] =
-                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd5000000 ?
+                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd2000000 ?
                            5'b01100 :
-                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd10000000 ?
+                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd4000000 ?
                            5'b01101 :
-                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd15000000 ?
+                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd6000000 ?
+                           5'b01110 :
+                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd8000000 ?
+                           5'b01111 :
+                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd10000000 ?
+                           5'b10000 :
+                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd12000000 ?
+                           5'b10001 :
+                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd14000000 ?
+                           5'b01100 :
+                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd16000000 ?
+                           5'b01101 :
+                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd18000000 ?
                            5'b01110 :
                         FpgaPins_Fpga_PROJECT_counter_a0 < 32'd20000000 ?
                            5'b01111 :
-                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd25000000 ?
+                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd22000000 ?
                            5'b10000 :
-                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd30000000 ?
-                           5'b10001 :
-                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd35000000 ?
-                           5'b01100 :
-                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd40000000 ?
-                           5'b01101 :
-                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd45000000 ?
-                           5'b01110 :
-                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd50000000 ?
-                           5'b01111 :
-                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd55000000 ?
-                           5'b10000 :
-                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd60000000 ?
+                        FpgaPins_Fpga_PROJECT_counter_a0 < 32'd24000000 ?
                            5'b10001 :
                         FpgaPins_Fpga_PROJECT_die_size_a0 > 7'd99 ?
                            5'b01011 :
